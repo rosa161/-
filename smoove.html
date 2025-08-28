@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>捲軸位置(滑入動畫Scroll)</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: rgb(200, 182, 223);
+            line-height: 100vh;
+            text-align: center;
+            font-size: 3rem;
+            color: white
+        }
+
+        footer {
+            background-color: rgb(200, 182, 223);
+            line-height: 100vh;
+            text-align: center;
+            font-size: 3rem;
+            color: white
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .smoove {
+            background-color: rgb(216, 188, 253);
+            flex: 1;
+            height: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>BANNER</header>
+    <main>
+        <!-- 預設的淡入淡出 -->
+        <div class="row">
+            <div class="smoove"></div>
+            <div class="smoove"></div>
+        </div>
+
+        <!-- 旋轉載入 -->
+        <div class="row">
+            <div class="smoove" data-move-x="-500px" data-rptate="90deg"></div>
+            <div class="smoove" data-move-x="-250px" data-rptate="45deg" data-move-y="150px"></div>
+            <div class="smoove" data-move-x="500px" data-rptate="-90deg"></div>
+        </div>
+
+        <div class="row">
+            <div class="smoove"></div>
+            <div class="smoove"></div>
+            <div class="smoove"></div>
+            <div class="smoove"></div>
+        </div>
+
+        <div class="row">
+            <div class="smoove smo-per"></div>
+            <div class="smoove smo-per"></div>
+            <div class="smoove smo-per"></div>
+            <div class="smoove smo-per"></div>
+            <div class="smoove smo-per"></div>
+        </div>
+    </main>
+    <footer>FOOTER</footer>
+
+    <!-- jQuary CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+        integrity="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"
+    <!-- jQuwry Smoove -->
+
+    <!-- My jQuary -->
+    <script>
+        // 共用預設值
+        $('.smoove').smoove({
+            offset:'40%',
+        });
+
+    </script>
+
+</body>
+
+</html>
